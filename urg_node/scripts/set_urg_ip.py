@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
 # Copyright (c) 2014 Unbounded Robotics Inc.
 # All right reserved.
@@ -65,7 +65,7 @@ if __name__ == "__main__":
     ip = parse_and_validate_ipv4(args.new_ip, "IP address")
     gw = parse_and_validate_ipv4(args.new_gw, "gateway address")
     nm = parse_and_validate_ipv4(args.nm, "netmask")
-    msg = "$IP" + ip + nm + gw + "\x0a"
+    msg = ("$IP" + ip + nm + gw + "\x0a").encode()
 
     print("Connecting to %s" % args.ip)
     sock = socket.socket()
